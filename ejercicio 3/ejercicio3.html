@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +7,11 @@
     <link rel="stylesheet" href="ejercicio3.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Sudoku</h1>
-        <div id="board" class="board"></div>
-        <button onclick="generateBoard()">Generar Nuevo Juego</button>
-        <button onclick="checkSolution()">Verificar Solución</button>
-    </div>
-
+    <h1>Sudoku</h1>
+    <div id="sudoku-board"></div>
+    <button onclick="nuevoJuego()">Nuevo Juego</button>
+    <button onclick="verificarSolucion()">Verificar Solución</button>
     <script src="ejercicio3.js"></script>
+    
 </body>
 </html>
