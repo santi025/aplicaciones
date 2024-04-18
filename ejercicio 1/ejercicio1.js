@@ -16,7 +16,7 @@ document.getElementById('appointmentForm').addEventListener('submit', function(e
   
     document.getElementById('appointmentList').appendChild(listItem);
   
-    // Clear form fields
+    
     document.getElementById('patientName').value = '';
     document.getElementById('appointmentDate').value = '';
     document.getElementById('doctor').value = '';
