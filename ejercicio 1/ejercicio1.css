@@ -1,9 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
-    font-family: Arial, sans-serif;
+  font-family:'Times New Roman', Times, serif;
     background-image: url(../curve-light-blue-background-abstract-free-vector.jpg); 
     background-size:cover; 
-    background-repeat: no-repeat; 
+    background-repeat: repeat; 
     background-position: center; 
     margin: 0;
     padding: 0;
