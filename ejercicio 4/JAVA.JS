@@ -28,7 +28,6 @@ button.addEventListener('click',()=>{
        if(contadorFallos>=5){
         document.querySelector('#resultado').innerHTML="Perdiste, has sido ahorcado.";
         document.getElementById('resultado').style.backgroundColor="#740707";
-        
         button.disabled=true;
        }
     }else{
