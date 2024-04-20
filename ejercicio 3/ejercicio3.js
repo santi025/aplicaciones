@@ -1,6 +1,6 @@
 const board = document.getElementById("board");
 
-// Sudoku board representation
+
 const sudokuBoard = [
     [5, 3, 0, 0, 7, 0, 0, 0, 0],
     [6, 0, 0, 1, 9, 5, 0, 0, 0],
