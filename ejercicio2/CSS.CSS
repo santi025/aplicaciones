@@ -96,6 +96,10 @@ h1 {
    border: none;
    border-radius: 4px;
    cursor: pointer;
+<<<<<<< HEAD
    display: inline-block; 
+=======
+   display: inline-block;
+>>>>>>> 49dac541b3fd36f423e9a1fa3c5faf8fc9fb18aa
  }
  
