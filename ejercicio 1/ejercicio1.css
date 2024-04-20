@@ -1,78 +1,72 @@
 body {
-    font-family: Arial, sans-serif;
-    font-family: Arial, sans-serif;
-    background-image: url(../curve-light-blue-background-abstract-free-vector.jpg); 
-    background-size:cover; 
-    background-repeat: no-repeat; 
-    background-position: center; 
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #5f91dd;
-    border-radius: 5px;
-    background-color: hwb(199 33% 12%);
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  form {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    font-weight: bold;
-  }
-  
-  input[type="text"],
-  input[type="date"],
-  select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  #appointments {
-    border-top: 1px solid #ccc;
-    padding-top: 20px;
-  }
-  
-  #appointmentList {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  #appointmentList li {
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  #appointmentList li:hover {
-    background-color: #f0f0f0;
-  }
-  
+  font-family: Arial, sans-serif; /* Cambiado a una fuente más legible */
+  background-image: url(../RECURSOS/curve-light-blue-background-abstract-free-vector.jpg); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto; /* Añadido espacio superior e inferior */
+  padding: 20px;
+  border: 1px solid #5f91dd;
+  border-radius: 8px;
+  background-color: #f8f8f8; /* Cambiado a un color más suave */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agregada sombra suave */
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0; /* Eliminado espacio superior innecesario */
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  display: block; /* Convertido en bloque para mejor alineación */
+  margin-bottom: 5px; /* Añadido espacio inferior */
+}
+
+
+input[type="text"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px; /* Ajustado tamaño del relleno */
+  margin-bottom: 15px; /* Aumentado espacio inferior */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px; /* Ajustado tamaño del botón */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block; /* Convertido en bloque en línea para mejor alineación */
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#appointmentList li {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px; /* Aumentado espacio inferior */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#appointmentList li:hover {
+  background-color: #f0f0f0;
+}

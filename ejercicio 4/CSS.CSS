@@ -1,22 +1,35 @@
+<<<<<<< HEAD
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+=======
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Añadido para mejorar el diseño */
+>>>>>>> 43017dea6e3cda22ff95ee3e131a40ebbfd09cfd
 }
 
-body{
+body {
     background-image: url("IMAGENES/camino-vacio-atmosfera-oscura_23-2150914150.avif");
-    font-family:'Times New Roman', Times, serif;
+    font-family: Arial, sans-serif; /* Cambiado a una fuente más legible */
     display: flex;
     justify-content: center;
+<<<<<<< HEAD
     background-size: cover;
     align-items: center;
     height: 100vh;
     
+=======
+    align-items: center; /* Añadido para centrar verticalmente */
+    height: 100vh; /* Añadido para hacerla responsive */
+>>>>>>> 43017dea6e3cda22ff95ee3e131a40ebbfd09cfd
 }
 
-h1{
+h1, h2 {
     color: aliceblue;
+<<<<<<< HEAD
     font-size: 56px;
 }
 
@@ -26,10 +39,16 @@ h2{
 }
 
 #ahorcado{
+=======
+    margin: 1rem 0; /* Añadido espacio superior e inferior */
+}
+
+#ahorcado {
+>>>>>>> 43017dea6e3cda22ff95ee3e131a40ebbfd09cfd
     height: 200px;
     width: 200px;
-    left: 0;
     background-image: url("IMAGENES/el-ahorcado.jpg");
+<<<<<<< HEAD
     border-radius: 32px;
     margin-top: 24px;
     
@@ -46,42 +65,50 @@ h2{
     align-items: center;
     padding: 20px;
     text-align: center;
+=======
+    border-radius: 50%; /* Cambiado a un círculo */
+    margin-top: 2em;
 }
-#resultado{
-    position:fixed;
-    width: 100%;
+
+#content-main {
+    width: 80%; /* Cambiado a un porcentaje para hacerlo responsive */
+    max-width: 800px; /* Añadido para limitar el ancho máximo */
+    height: auto; /* Cambiado a automático para adaptarse al contenido */
+    background-color: #3b3f42;
+    border-radius: 2em;
+    padding: 2em; /* Añadido espacio alrededor del contenido */
+    text-align: center; /* Alineado al centro */
+>>>>>>> 43017dea6e3cda22ff95ee3e131a40ebbfd09cfd
+}
+
+#resultado {
     color: aliceblue;
     text-align: center;
-    top: 10em;
-}   
-
-#output{
-    color: rgb(234, 223, 217);
-    font-size:3em;
-    margin: 2rem;
-    
+    margin-top: 2em; /* Ajustado el espacio superior */
 }
 
-#calcular{
+#output {
+    color: rgb(234, 223, 217);
+    font-size: 2em; /* Reducido el tamaño de fuente */
+    margin: 1rem 0; /* Añadido espacio superior e inferior */
+}
+
+#calcular {
     color: #ddecef;
-    background:#3b3f42;
-    border: 2px solid #c2d0d4;
+    background: #4CAF50; /* Cambiado el color de fondo */
+    border: none;
     border-radius: 4px;
-    padding: 12px 20px;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
+    padding: 12px 24px;
+    font-size: 1.2em; /* Aumentado el tamaño de fuente */
+    margin: 1rem 0; /* Añadido espacio superior e inferior */
     cursor: pointer;
-    text-decoration: none;
+    transition: background-color 0.4s, color 0.4s;
 }
 
 #calcular:hover {
-    background-color: #171415;
-    color: white;
+    background-color: #45a049; /* Cambiado el color de fondo al pasar el mouse */
 }
+<<<<<<< HEAD
 
 input[type=text]{
     
@@ -103,4 +130,14 @@ input[type=text]{
 #calcular:hover, #reiniciar:hover {
     background-color: #171415;
     color: white;
+=======
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 24px; /* Ajustado tamaño del botón */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block; /* Convertido en bloque en línea para mejor alineación */
+>>>>>>> 43017dea6e3cda22ff95ee3e131a40ebbfd09cfd
   }
