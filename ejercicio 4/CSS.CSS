@@ -1,6 +1,7 @@
 *{
-    top: 0;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -8,17 +9,20 @@ body{
     font-family:'Times New Roman', Times, serif;
     display: flex;
     justify-content: center;
+    background-size: cover;
+    align-items: center;
+    height: 100vh;
     
 }
 
 h1{
     color: aliceblue;
-    margin: 1rem;
+    font-size: 56px;
 }
 
 h2{
     color: aliceblue;
-    margin: 1rem;
+    font-size: 28px;
 }
 
 #ahorcado{
@@ -26,21 +30,22 @@ h2{
     width: 200px;
     left: 0;
     background-image: url("IMAGENES/el-ahorcado.jpg");
-    border-radius: 2em;
-    margin-top: 2em;
+    border-radius: 32px;
+    margin-top: 24px;
     
 }
 
 #content-main{
-    margin-top: 5em;
-    width: 50em;
-    height: 40em;
+    width: 1000px;
+    height: 600px;
     background-color: #3b3f42;
-    border-radius: 2em;
+    border-radius: 36px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    text-align: center;
 }
 #resultado{
     position:fixed;
@@ -81,9 +86,9 @@ h2{
 input[type=text]{
     
     width: 40%; 
-    padding: 12px 20px;
-    font-size: 20px;
-    margin: 8px 0;
+    padding: 10px;
+    font-size: 16px;
+    margin: 16px ;
     box-sizing: border-box;
     border-radius: 4px;
     background-color: #4f5557;
@@ -94,3 +99,8 @@ input[type=text]{
 ::placeholder{
     color: rgb(179, 193, 245);
 }
+
+#calcular:hover, #reiniciar:hover {
+    background-color: #171415;
+    color: white;
+  }
