@@ -78,10 +78,10 @@ h1 {
  button {
    background-color: #4CAF50;
    color: white;
-   padding: 12px 24px; /* Ajustado tamaño del botón */
+   padding: 12px 24px; 
    border: none;
    border-radius: 4px;
    cursor: pointer;
-   display: inline-block; /* Convertido en bloque en línea para mejor alineación */
+   display: inline-block;
  }
  
