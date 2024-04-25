@@ -1,83 +1,59 @@
-const board = document.getElementById("board");
+document.addEventListener('DOMContentLoaded', function() {
+    const cells = document.querySelectorAll('.cell');
+    const resetButton = document.getElementById('resetButton');
+    const status = document.getElementById('status');
 
+    let currentPlayer = 'X';
+    let board = ['', '', '', '', '', '', '', '', ''];
+    let gameActive = true;
 
-const sudokuBoard = [
-    [5, 3, 0, 0, 7, 0, 0, 0, 0],
-    [6, 0, 0, 1, 9, 5, 0, 0, 0],
-    [0, 9, 8, 0, 0, 0, 0, 6, 0],
-    [8, 0, 0, 0, 6, 0, 0, 0, 3],
-    [4, 0, 0, 8, 0, 3, 0, 0, 1],
-    [7, 0, 0, 0, 2, 0, 0, 0, 6],
-    [0, 6, 0, 0, 0, 0, 2, 8, 0],
-    [0, 0, 0, 4, 1, 9, 0, 0, 5],
-    [0, 0, 0, 0, 8, 0, 0, 7, 9]
-];
-
-
-function renderBoard() {
-    for (let i = 0; i < sudokuBoard.length; i++) {
-        for (let j = 0; j < sudokuBoard[i].length; j++) {
-            const cell = document.createElement("input");
-            cell.classList.add("cell");
-            cell.setAttribute("type", "text");
-            cell.setAttribute("maxlength", "1");
-            cell.dataset.row = i;
-            cell.dataset.col = j;
-            cell.value = sudokuBoard[i][j] === 0 ? "" : sudokuBoard[i][j];
-            cell.addEventListener("input", validateInput);
-            board.appendChild(cell);
-        }
-    }
-}
-
-
-function validateInput(event) {
-    const inputValue = event.target.value;
-    const row = parseInt(event.target.dataset.row);
-    const col = parseInt(event.target.dataset.col);
-
-  
-    if (inputValue !== "" && (isNaN(inputValue) || inputValue < 1 || inputValue > 9 || !isValidMove(row, col, parseInt(inputValue)))) {
-        event.target.value = "";
-    } else {
-        sudokuBoard[row][col] = inputValue === "" ? 0 : parseInt(inputValue);
-    }
-}
-
-
-function isValidMove(row, col, value) {
-    
-    for (let i = 0; i < 9; i++) {
-        if (sudokuBoard[row][i] === value && i !== col) {
-            return false;
+    function handleCellClick(index) {
+        if (gameActive && board[index] === '') {
+            board[index] = currentPlayer;
+            cells[index].textContent = currentPlayer;
+            checkWinner();
+            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
         }
     }
 
-   
-    for (let i = 0; i < 9; i++) {
-        if (sudokuBoard[i][col] === value && i !== row) {
-            return false;
-        }
-    }
+    function checkWinner() {
+        const winningConditions = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
 
-
-    const startRow = Math.floor(row / 3) * 3;
-    const startCol = Math.floor(col / 3) * 3;
-    for (let i = startRow; i < startRow + 3; i++) {
-        for (let j = startCol; j < startCol + 3; j++) {
-            if (sudokuBoard[i][j] === value && (i !== row || j !== col)) {
-                return false;
+        for (let i = 0; i < winningConditions.length; i++) {
+            const [a, b, c] = winningConditions[i];
+            if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+                status.textContent = `¡${board[a]} ha ganado!`;
+                gameActive = false;
+                return;
             }
         }
+
+        if (!board.includes('')) {
+            status.textContent = '¡Empate!';
+            gameActive = false;
+        }
     }
 
-    return true;
-}
+    function handleReset() {
+        currentPlayer = 'X';
+        board = ['', '', '', '', '', '', '', '', ''];
+        cells.forEach(cell => cell.textContent = '');
+        status.textContent = '';
+        gameActive = true;
+    }
 
-function solveSudoku() {
-    
-    
-}
+    cells.forEach((cell, index) => {
+        cell.addEventListener('click', () => handleCellClick(index));
+    });
 
-
-renderBoard();
+    resetButton.addEventListener('click', handleReset);
+});
