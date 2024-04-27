@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const celdas = document.querySelectorAll('.celda');
-    const botonReset = document.getElementById('botonReset');
-    const estado = document.getElementById('estado');
+    const celdas = document.querySelectorAll('.cell');
+    const botonReset = document.getElementById('resetButton');
+    const estado = document.getElementById('status');
 
     let jugadorActual = 'X';
     let tablero = ['', '', '', '', '', '', '', '', ''];
