@@ -1,23 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const cells = document.querySelectorAll('.cell');
-    const resetButton = document.getElementById('resetButton');
-    const status = document.getElementById('status');
+    const celdas = document.querySelectorAll('.celda');
+    const botonReset = document.getElementById('botonReset');
+    const estado = document.getElementById('estado');
 
-    let currentPlayer = 'X';
-    let board = ['', '', '', '', '', '', '', '', ''];
-    let gameActive = true;
+    let jugadorActual = 'X';
+    let tablero = ['', '', '', '', '', '', '', '', ''];
+    let juegoActivo = true;
 
-    function handleCellClick(index) {
-        if (gameActive && board[index] === '') {
-            board[index] = currentPlayer;
-            cells[index].textContent = currentPlayer;
-            checkWinner();
-            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    function manejarClickEnCelda(indice) {
+        if (juegoActivo && tablero[indice] === '') {
+            tablero[indice] = jugadorActual;
+            celdas[indice].textContent = jugadorActual;
+            comprobarGanador();
+            jugadorActual = jugadorActual === 'X' ? 'O' : 'X';
         }
     }
 
-    function checkWinner() {
-        const winningConditions = [
+    function comprobarGanador() {
+        const condicionesGanadoras = [
             [0, 1, 2],
             [3, 4, 5],
             [6, 7, 8],
@@ -28,32 +28,32 @@ document.addEventListener('DOMContentLoaded', function() {
             [2, 4, 6]
         ];
 
-        for (let i = 0; i < winningConditions.length; i++) {
-            const [a, b, c] = winningConditions[i];
-            if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-                status.textContent = `¡${board[a]} ha ganado!`;
-                gameActive = false;
+        for (let i = 0; i < condicionesGanadoras.length; i++) {
+            const [a, b, c] = condicionesGanadoras[i];
+            if (tablero[a] && tablero[a] === tablero[b] && tablero[a] === tablero[c]) {
+                estado.textContent = `¡${tablero[a]} ha ganado!`;
+                juegoActivo = false;
                 return;
             }
         }
 
-        if (!board.includes('')) {
-            status.textContent = '¡Empate!';
-            gameActive = false;
+        if (!tablero.includes('')) {
+            estado.textContent = '¡Empate!';
+            juegoActivo = false;
         }
     }
 
-    function handleReset() {
-        currentPlayer = 'X';
-        board = ['', '', '', '', '', '', '', '', ''];
-        cells.forEach(cell => cell.textContent = '');
-        status.textContent = '';
-        gameActive = true;
+    function manejarReinicio() {
+        jugadorActual = 'X';
+        tablero = ['', '', '', '', '', '', '', '', ''];
+        celdas.forEach(celda => celda.textContent = '');
+        estado.textContent = '';
+        juegoActivo = true;
     }
 
-    cells.forEach((cell, index) => {
-        cell.addEventListener('click', () => handleCellClick(index));
+    celdas.forEach((celda, indice) => {
+        celda.addEventListener('click', () => manejarClickEnCelda(indice));
     });
 
-    resetButton.addEventListener('click', handleReset);
+    botonReset.addEventListener('click', manejarReinicio);
 });
